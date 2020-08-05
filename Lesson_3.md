@@ -48,6 +48,23 @@ Datasets: [version 1](https://introtomlsampledata.blob.core.windows.net/data/nyc
 ***
 
 ### Features
-A feature is a characteristic or attribute of the observation. Usually in a dataset, each row is an observation and columns represent features.
+A _feature_ is a characteristic or attribute of the observation. Usually in a dataset, each row is an observation and columns represent features.
 
-Feature engineering is the process of creating new features in the dataset when original set of features is not adequate to train the model. 
+_Feature engineering_ is the process of creating new features in the dataset when original set of features is not adequate to train the model. 
+
+_Feature selection_ is the process of selecting the most important and/or most relevant features. 
+
+_Dimensionality reduction_ is the process of reduce number of features when datasets contain a very large number of features. This helps improve performance of the machine learning algorithm.
+
+Why or when would we need Feature Engineering?
+
+Benefits of Feature Engineering?
+
+Feature Engineering tasks:
+* Aggregation
+* Part-of
+* Binning
+* Flagging
+* Frequency-based
+* Embedding or Feature Learning
+* Deriving by example
