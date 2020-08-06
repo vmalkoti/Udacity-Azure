@@ -78,3 +78,18 @@ _Dimensionality reduction_ is the process of reduce number of features when data
 * t-SNE (t-distribution Stochastic Neighboring Entities)
 * Feature embedding
 
+
+#### Lab 4
+
+Datasets: [bike rental hourly](https://introtomlsampledata.blob.core.windows.net/data/bike-rental/bike-rental-hour.csv)
+
+TODO: Find difference between Regular Expression and Relative Expression in Split Data module in Azure
+
+Code used in Python module:
+```python
+for i in np.arange(1, 13):
+        prev_col_name = 'cnt' if i == 1 else 'Rentals in hour -{}'.format(i-1)
+        new_col_name = 'Rentals in hour -{}'.format(i)
+
+        dataframe1[new_col_name] = dataframe1[prev_col_name].shift(1).fillna(0)
+```
