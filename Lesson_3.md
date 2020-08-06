@@ -52,10 +52,6 @@ A _feature_ is a characteristic or attribute of the observation. Usually in a da
 
 _Feature engineering_ is the process of creating new features in the dataset when original set of features is not adequate to train the model. 
 
-_Feature selection_ is the process of selecting the most important and/or most relevant features. 
-
-_Dimensionality reduction_ is the process of reduce number of features when datasets contain a very large number of features. This helps improve performance of the machine learning algorithm.
-
 Why or when would we need Feature Engineering?
 
 Benefits of Feature Engineering?
@@ -68,3 +64,17 @@ Feature Engineering tasks:
 * Frequency-based
 * Embedding or Feature Learning
 * Deriving by example
+
+_Feature selection_ is the process of selecting the most important and/or most relevant features. 
+
+Reasons we need feature selection:
+* Eliminate irrelevant, redundant or (highly) correlated features
+* To improve performance of algorithms that cannot handle a large number of features
+
+
+
+_Dimensionality reduction_ is the process of reduce number of features when datasets contain a very large number of features. This helps improve performance of the machine learning algorithm. Commonly used techniques are:
+* PCA (Principal Component Analysis)
+* t-SNE (t-distribution Stochastic Neighboring Entities)
+* Feature embedding
+
