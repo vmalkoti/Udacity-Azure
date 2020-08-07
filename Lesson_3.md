@@ -93,9 +93,9 @@ Steps:
 5. Edit metadata to change type of columns "season" and "weathersit" to categorical
 6. Exclude columns "instant", "dteday", "casual", "registered" 
 7. Create two copies of the dataset
-    1. With original columns
+    1. With original features
         1. Use columns from data source without any changes or additions
-    2. With additional columns
+    2. With engineered features
         1. Python script creates 12 columns storing rentals in past 12 hours (code below)
 8. Take both datasets and split them into train/test sets with condition "yr"==0
 9. Exclude column "yr" from all of these datasets
@@ -111,3 +111,17 @@ for i in np.arange(1, 13):
 
     dataframe1[new_col_name] = dataframe1[prev_col_name].shift(1).fillna(0)
 ```
+
+### Data Drift
+
+**Causes**
+
+**Monitoring**
+Process of monitoring involves:
+* Specifying baseline dataset
+* Specifying target dataset
+* Comparing these two datasets
+
+Different types of comparison:
+* Comparing input data vs training data
+* Comparing different samples of time-series data
