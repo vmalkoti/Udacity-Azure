@@ -85,11 +85,29 @@ Datasets: [bike rental hourly](https://introtomlsampledata.blob.core.windows.net
 
 TODO: Find difference between Regular Expression and Relative Expression in Split Data module in Azure
 
-Code used in Python module:
+Steps:
+1. Create dataset - Bike rental daily
+2. Create new pipeline in designer
+3. Select compute target
+4. Add dataset that we had created - Bike rental daily
+5. Edit metadata to change type of columns "season" and "weathersit" to categorical
+6. Exclude columns "instant", "dteday", "casual", "registered" 
+7. Create two copies of the dataset
+    1. With original columns
+        1. Use columns from data source without any changes or additions
+    2. With additional columns
+        1. Python script creates 12 columns storing rentals in past 12 hours (code below)
+8. Take both datasets and split them into train/test sets with condition "yr"==0
+9. Exclude column "yr" from all of these datasets
+10. Train both training datasets with Boosted Decision Tree Regression algorithm 
+10. Score both of these train sets using test sets
+11. Evaluate output of scores for comparison
+
+**Code used in Python module:**
 ```python
 for i in np.arange(1, 13):
-        prev_col_name = 'cnt' if i == 1 else 'Rentals in hour -{}'.format(i-1)
-        new_col_name = 'Rentals in hour -{}'.format(i)
+    prev_col_name = 'cnt' if i == 1 else 'Rentals in hour -{}'.format(i-1)
+    new_col_name = 'Rentals in hour -{}'.format(i)
 
-        dataframe1[new_col_name] = dataframe1[prev_col_name].shift(1).fillna(0)
+    dataframe1[new_col_name] = dataframe1[prev_col_name].shift(1).fillna(0)
 ```
