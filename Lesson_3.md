@@ -112,6 +112,8 @@ for i in np.arange(1, 13):
     dataframe1[new_col_name] = dataframe1[prev_col_name].shift(1).fillna(0)
 ```
 
+****
+
 ### Data Drift
 
 **Causes**
@@ -125,3 +127,40 @@ Process of monitoring involves:
 Different types of comparison:
 * Comparing input data vs training data
 * Comparing different samples of time-series data
+
+****
+
+### Model Training Basics
+
+Data Science Process Steps:
+1. Collect data
+2. Prepare Data
+3. Train model
+4. Evaluate model
+5. Deploy model
+
+The goal of the training process is to determine the relationship between features (independent variables) and the target (dependent variable).
+
+**Parameters** are the values that model learns during the training process, e.g. in a linear model, the feature weights are the parameters. The training process tries to find the best set of parameters for the model.
+
+**Hyperparameters** are the values that we provide to the model for training, like the learning rate, regularization parameter, depth of tree, k value in k-means and k-nearest-neighbors, etc. Hyperparameter tuning is running the model training process several times and selecting the values that produce the best results on validation data.
+
+The input dataset for training is usually divided into three parts:
+1. **Training set** is used to _fit_ the model, i.e. learn the parameters
+2. **Validation set** or **Cross-Validation set** is then used to verify how the trained model performed with a set of hyperparameter values. Several runs using the training and validation set are used to select best values for hyperparameters.
+3. **Test set** is the unseen data set that is finally used to evaluate the model trained with tuned hyperparameters.
+
+****
+
+### Classification
+
+In classification problems, the algorithm learns to assign a label to the input observation. The expected output is a discrete value from a small set of values (two or more).
+
+Types of classification problems:
+1. Binary classification assigns a label out of two possible classes. Example - classify email as spam or not-spam
+2. Multi class classification assigns a label out of multiple classes. Example - classify input character image as digits 0,1,...9
+3. Multi label classification assigns multiple labels. Example - assign relevant tags to a news article
+
+****
+
+### Regression
