@@ -164,3 +164,60 @@ Types of classification problems:
 ****
 
 ### Regression
+
+In regression problems, the algorithm learns to predict a numerical value for an input observation. The expected output is a continuous value not limited to any specific set.
+
+Types of regression problems:
+1. Predict arbitratry values. Example - predict house price
+2. Predict values between 0 and 1. Example - probability that a patient has a disease
+
+***
+
+### Evaluating Model Performance - Classification
+
+A model is ready to be deployed in production when it performs well on and test data set.
+
+#### Confusion Matrices 
+
+[Confusion matrix](https://en.wikipedia.org/wiki/Confusion_matrix) or *error matrix* is a table layout that allows the visualization of algorithm's output summary to help in evaluation.
+
+|  |  | Actual |  |
+| --- | --- | --- | --- |
+|  |  | True   | False  |
+| **Predicted** | True  | True Positive (TP)  | False Negative (FN) |
+|    | False | False Positive (FP) | True Negative (TN) |
+
+**Accuracy** is ratio of total correct prediction to all predictions made.
+
+![accuracy](https://latex.codecogs.com/gif.latex?Accuracy&space;=&space;\frac{TP&space;&plus;&space;TN}{TP&space;&plus;&space;FP&space;&plus;&space;TN&space;&plus;&space;FN})
+
+**Precision** is ratio of correct positive predictions to all predicted positives.
+
+![precision](https://latex.codecogs.com/gif.latex?Precision&space;=&space;\frac{TP}{TP&space;&plus;&space;FP})
+
+**Recall** is ratio of correct positive predictions to all actual positives
+
+![recall](https://latex.codecogs.com/gif.latex?Recall&space;=&space;\frac{TP}{TP&space;&plus;&space;FN})
+
+F1 Score
+
+![F1](https://latex.codecogs.com/gif.latex?F1&space;Score&space;=&space;2&space;*&space;\frac{Precision&space;*&space;Recall}{Precision&space;&plus;&space;Recall})
+
+#### Visual ways of model perfomance
+* ROC (Receiver Operating Characteristics) is ratio of the true positives rate to the false positives rate
+* AUC (Area Under the Curve) is the area under the ROC curve
+* Gain and Life
+
+***
+
+### Evaluating Model Performance - Regression
+ 
+ * Root Mean Squared Error (RMSE))
+ * Mean Absolute Error (MAE)
+ * R-squared
+ * Spearman Correlation 
+
+#### Visual ways of evaluation
+ * Predicted vs True chart
+ * Histogram of Residuals
+ 
