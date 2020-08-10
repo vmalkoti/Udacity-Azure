@@ -249,7 +249,7 @@ Steps:
 
 ***
 
-### Ensemble Algorithms
+### Ensemble Learning
 
 Ensembles are combination of several different machine algorithms.
 
