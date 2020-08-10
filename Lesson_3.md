@@ -40,6 +40,7 @@ References:
 [Detect Drift On Datasets](https://docs.microsoft.com/en-us/azure/machine-learning/how-to-monitor-datasets)
 [Understanding and Handling Data and Concept Drift](https://www.explorium.ai/blog/understanding-and-handling-data-and-concept-drift/)
 
+***
 
 #### Lab 3
 
@@ -78,8 +79,9 @@ _Dimensionality reduction_ is the process of reduce number of features when data
 * t-SNE (t-distribution Stochastic Neighboring Entities)
 * Feature embedding
 
+***
 
-#### Lab 4
+#### Lab: Engineer and Select Features
 
 Datasets: [bike rental hourly](https://introtomlsampledata.blob.core.windows.net/data/bike-rental/bike-rental-hour.csv)
 
@@ -221,3 +223,30 @@ F1 Score
  * Predicted vs True chart
  * Histogram of Residuals
  
+***
+
+ #### Lab: Train and Evaluate a Model
+
+ Dataset: [flightdelays](https://introtomlsampledata.blob.core.windows.net/data/flightdelays/flightdelays.csv)
+
+Steps:
+1. Open Datasets tab and create a new dataset with flightdelays data
+2. Open Deisgner tab
+3. Select compute target
+4. Add flightdelays dataset
+5. Add Split Data module with mode="Relative Expression" and expression="\Month"<10
+6. Add Select Columns in Dataset module and exclude columns: Month, Year, Year_R, Timezone, Timezone_R
+7. Add Two-Class Logistic Regression module 
+8. Add train module. 
+    1. Set Label Column="ArrDel15"
+    2. Connect first input to Logistic Regression
+    3. Connect second input to Select Columns module
+9. Add Score Model module
+    1. Connect first input to Train Model 
+    2. Connect second input to Split Data module
+10. Add Evaluate Model module and connect first input to Score Model module
+11. Click Submit to create experiment and run the pipeline
+
+***
+
+### Ensemble Algorithms
