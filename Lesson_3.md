@@ -250,3 +250,43 @@ Steps:
 ***
 
 ### Ensemble Algorithms
+
+Ensembles are combination of several different machine algorithms.
+
+Types:
+* Bagging or Bootstrap aggregation
+    * Reduce variance (overfitting)
+    * A set of models are trained on samples from the data set
+* Boosting
+    * Reduce bias (underfitting)
+    * A sequence of models added iteratively, each improving output of one before it
+* Stacking
+    * Hierarchichal layers of models, similar to a neural network
+
+### Automated Machine Learning
+
+***
+
+#### Lab: Train a Two-Class Boosted Decision Tree
+
+Dataset: [flightdelays](https://introtomlsampledata.blob.core.windows.net/data/flightdelays/flightdelays.csv)
+
+Steps:
+1. Open Datasets tab and create a new dataset with flightdelays data
+2. Open Deisgner tab
+3. Select compute target
+4. Add flightdelays dataset
+5. Add Split Data module with mode="Relative Expression" and expression="\Month"<10
+6. Add Select Columns in Dataset module and exclude columns: Month, Year, Year_R, Timezone, Timezone_R
+7. Add Two-Class Boosted Decision Tree module 
+8. Add train module. 
+    1. Set Label Column="ArrDel15"
+    2. Connect first input to Logistic Regression
+    3. Connect second input to Select Columns module
+9. Add Score Model module
+    1. Connect first input to Train Model 
+    2. Connect second input to Split Data module
+10. Add Evaluate Model module and connect first input to Score Model module
+11. Click Submit to create experiment and run the pipeline
+
+***
