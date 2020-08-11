@@ -288,5 +288,21 @@ Steps:
     2. Connect second input to Split Data module
 10. Add Evaluate Model module and connect first input to Score Model module
 11. Click Submit to create experiment and run the pipeline
+12. After model run is complete, go to Output tab of Evaluate Model and review visualizations
 
 ***
+
+#### Lab: Train a Simple Classifier with Automated ML
+
+Dataset: [flightdelays](https://introtomlsampledata.blob.core.windows.net/data/flightdelays/flightdelays.csv)
+
+Steps:
+
+1. Open Datasets tab and create a new dataset with flightdelays data
+    1. Skip columns: Path, Month, Year, Timezone, Year_R, Timezone_R
+2. Open Home tab and create a new Automated ML Run
+3. Select flightdelays dataset 
+4. Create new experiment with target column ArrDel15
+5. Select task type: Classification
+6. Select AUC as primary metric with 1 hour time and 0.7 threshold
+7. After model run is finished, view model information in Model tab and metrics in Metrics tab
